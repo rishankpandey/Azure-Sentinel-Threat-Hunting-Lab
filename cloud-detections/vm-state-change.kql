@@ -1,0 +1,8 @@
+AzureActivity
+| where OperationNameValue contains "VIRTUALMACHINES"
+| project TimeGenerated,
+         Caller,
+         OperationNameValue,
+         ActivityStatusValue,
+         ResourceGroup
+| order by TimeGenerated desc
