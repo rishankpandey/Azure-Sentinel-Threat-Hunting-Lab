@@ -39,3 +39,20 @@ Detects modifications to Windows Run registry keys commonly used for persistence
 * Developed KQL detections and analytics rules
 * Generated and investigated security incidents
 * Mapped detections to MITRE ATT&CK techniques
+
+
+## Architecture
+
+Windows Server 2025 VM
+        ↓
+      Sysmon
+        ↓
+Azure Monitor Agent
+        ↓
+Log Analytics Workspace
+        ↓
+Microsoft Sentinel
+        ↓
+Analytics Rules
+        ↓
+Alerts & Incidents
