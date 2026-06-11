@@ -1,0 +1,7 @@
+AzureActivity
+| where CategoryValue == "Administrative"
+| project TimeGenerated,
+         Caller,
+         OperationNameValue,
+         ActivityStatusValue
+| order by TimeGenerated desc
