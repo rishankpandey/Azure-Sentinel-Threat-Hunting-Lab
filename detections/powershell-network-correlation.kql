@@ -1,0 +1,20 @@
+let PSExecution =
+Event
+| where EventLog == "Microsoft-Windows-Sysmon/Operational"
+| where EventID == 1
+| where RenderedDescription contains "powershell.exe"
+| project PSTime=TimeGenerated, Computer;
+
+let PSNetwork =
+Event
+| where EventLog == "Microsoft-Windows-Sysmon/Operational"
+| where EventID == 3
+| where RenderedDescription contains "powershell.exe"
+| project NetworkTime=TimeGenerated,
+          Computer,
+          RenderedDescription;
+
+PSExecution
+| join kind=inner PSNetwork on Computer
+| where NetworkTime between (PSTime .. PSTime + 5m)
+| project Computer, PSTime, NetworkTime
