@@ -40,6 +40,13 @@ Detects modifications to Windows Run registry keys commonly used for persistence
 * Generated and investigated security incidents
 * Mapped detections to MITRE ATT&CK techniques
 
+## Cloud Monitoring
+
+* Azure Activity Log ingestion
+* Cloud resource deployment monitoring
+* VM lifecycle monitoring
+* Resource modification detections
+
 
 ## Architecture
 
