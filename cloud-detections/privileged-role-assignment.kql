@@ -1,0 +1,6 @@
+AzureActivity
+| where OperationNameValue contains "roleAssignments/write"
+| project TimeGenerated,
+         Caller,
+         ResourceGroup,
+         OperationNameValue
