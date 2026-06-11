@@ -1,0 +1,6 @@
+AzureActivity
+| where OperationNameValue contains "delete"
+| project TimeGenerated,
+         Caller,
+         OperationNameValue,
+         ResourceGroup
