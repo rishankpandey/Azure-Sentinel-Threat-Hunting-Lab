@@ -1,0 +1,4 @@
+Event
+| where EventLog == "Microsoft-Windows-Sysmon/Operational"
+| where EventID == 1
+| where RenderedDescription contains "-enc"
